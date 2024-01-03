@@ -9,3 +9,6 @@ function getFileData(fileLocation) {
 };
 const inputLocation = "./Day5/input.txt";
 const inputData = getFileData(inputLocation);
+
+const inputArray = inputData;
+console.log(inputArray);
