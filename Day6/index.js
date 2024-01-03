@@ -1,14 +1,16 @@
-import { readFileSync } from "fs";
+const time = [41, 77, 70, 96];
+const distance = [249, 1362, 1127, 1011];
 
-function getFileData(fileLocation) {
-    const fileData = readFileSync(fileLocation, "utf8", (err, data) => {
-        if(err) throw err; 
-        return data;
-    });
-    return fileData;
+const ans = [];
+for (let i = 0; i < time.length; i++) {
+    let count = 0;
+    for (let j = 0; j < time[i]; j++) {
+        if ((time[i] - j) * j > distance[i]) {
+            count += 1;
+        };
+    };
+    ans.push(count);
 };
-const inputLocation = "./Day5/input.txt";
-const inputData = getFileData(inputLocation);
 
-const inputArray = inputData;
-console.log(inputArray);
+let x = ans.reduce((a, b) => a * b);
+console.log(x);
