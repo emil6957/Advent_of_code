@@ -1,5 +1,8 @@
-const time = [41, 77, 70, 96];
-const distance = [249, 1362, 1127, 1011];
+// const time = [41, 77, 70, 96]; PART 1 INPUT
+// const distance = [249, 1362, 1127, 1011];
+
+const time = [41777096]; // PART 2 INPUT;
+const distance = [249136211271011];
 
 const ans = [];
 for (let i = 0; i < time.length; i++) {
