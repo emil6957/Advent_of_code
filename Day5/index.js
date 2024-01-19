@@ -55,17 +55,22 @@ const mapConversion = (item, mapType) => {
 
 
 const locations = [];
-for (let i = 0; i < seeds.length; i++) {
-    const seed = seeds[i];
-    const soil = mapConversion(seed, seedToSoil);
-    const fertilizer = mapConversion(soil, soilToFertilizer)
-    const water = mapConversion(fertilizer, fertilizerToWater);
-    const light = mapConversion(water, waterToLight);
-    const temperature = mapConversion(light, lightToTemperature)
-    const humidity = mapConversion(temperature, temperatureToHumidity);
-    const location = mapConversion(humidity, humidityToLocation);
-
-    locations.push(location);
+for (let i = 0; i < seeds.length-2; i+=2) {
+    // const seed = seeds[i];
+    const seedRangeMin = seeds[i];
+    const seedRangeMax = seeds[i+1] - 1;
+    for (let j = seedRangeMin; j < seedRangeMax; j++) {
+        const seed = j;
+        const soil = mapConversion(seed, seedToSoil);
+        const fertilizer = mapConversion(soil, soilToFertilizer)
+        const water = mapConversion(fertilizer, fertilizerToWater);
+        const light = mapConversion(water, waterToLight);
+        const temperature = mapConversion(light, lightToTemperature)
+        const humidity = mapConversion(temperature, temperatureToHumidity);
+        const location = mapConversion(humidity, humidityToLocation);
+    
+        locations.push(location);
+    };
 };
 
 console.log(locations);
