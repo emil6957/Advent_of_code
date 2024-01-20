@@ -56,7 +56,6 @@ const mapConversion = (item, mapType) => {
 
 const locations = [];
 for (let i = 0; i < seeds.length-2; i+=2) {
-    // const seed = seeds[i];
     const seedRangeMin = seeds[i];
     const seedRangeMax = seeds[i+1] - 1;
     for (let j = seedRangeMin; j < seedRangeMax; j++) {
